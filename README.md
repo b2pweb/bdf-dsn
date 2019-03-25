@@ -19,7 +19,16 @@ A basic use of DSN.
 
 ```PHP
 <?php
-$request = \Bdf\Dsn\Dsn::parse('mysq://john:doe@acme.com/dbname?timeout=3');
+$request = \Bdf\Dsn\Dsn::parse('mysql://john:doe@localhost/testdb?timeout=3');
+
+var_dump($request->toArray());
+```
+
+Supports pdo dsn
+
+```PHP
+<?php
+$request = \Bdf\Dsn\Dsn::parse('mysql:host=localhost;dbname=testdb;timeout=3');
 
 var_dump($request->toArray());
 ```
