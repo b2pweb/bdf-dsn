@@ -1,2 +1,30 @@
 # dsn
 A simple DSN parser
+
+[![Build Status](https://travis-ci.org/b2pweb/bdf-dsn.svg?branch=master)](https://travis-ci.org/b2pweb/bdf-dsn)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/b2pweb/bdf-dsn/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/b2pweb/bdf-dsn/?branch=master)
+[![Packagist Version](https://img.shields.io/packagist/v/b2pweb/bdf-dsn.svg)](https://packagist.org/packages/b2pweb/bdf-dsn)
+[![Total Downloads](https://img.shields.io/packagist/dt/b2pweb/bdf-dsn.svg)](https://packagist.org/packages/b2pweb/bdf-dsn)
+
+
+## Install via composer
+```bash
+$ composer require b2pweb/bdf-pipeline
+```
+
+
+## Usage Instructions
+
+A basic use of DSN.
+
+```PHP
+<?php
+$request = \Bdf\Dsn\Dsn::parse('mysq://john:doe@acme.com/dbname?timeout=3');
+
+var_dump($request->toArray());
+```
+
+
+## License
+
+Distributed under the terms of the MIT license.
