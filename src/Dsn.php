@@ -37,7 +37,7 @@ final class Dsn
     public static function parse(string $dsn): DsnRequest
     {
         // Only parsing dsn as url
-        if (($pos = strpos($dsn, ':')) === false) {
+        if (false === strpos($dsn, ':')) {
             return new DsnRequest($dsn, $dsn);
         }
 
