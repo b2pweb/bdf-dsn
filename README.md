@@ -9,7 +9,7 @@ A simple DSN parser
 
 ## Install via composer
 ```bash
-$ composer require b2pweb/bdf-pipeline
+$ composer require b2pweb/bdf-dsn
 ```
 
 
