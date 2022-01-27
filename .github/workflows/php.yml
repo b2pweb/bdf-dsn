@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: ['7.1', '7.2', '7.3', '7.4', '8.0']
+    name: PHP ${{ matrix.php-versions }}
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set Timezone
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: "Europe/Paris"
+    
+    - name: Install PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        extensions: json
+        ini-values: date.timezone=Europe/Paris
+    - name: Check PHP Version
+      run: php -v
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Run test suite
+      run: composer run-script tests
