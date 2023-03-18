@@ -1,6 +1,6 @@
 {
   "name": "b2pweb/bdf-dsn",
-  "description": "A dsn parser",
+  "description": "A dsn (data source name) parser",
   "type": "library",
   "keywords": ["dsn", "queue", "parser"],
   "license": "MIT",
