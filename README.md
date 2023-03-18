@@ -1,4 +1,4 @@
-# dsn
+# dsn (data source name)
 A simple DSN parser
 
 [![build](https://github.com/b2pweb/bdf-dsn/actions/workflows/php.yml/badge.svg)](https://github.com/b2pweb/bdf-dsn/actions/workflows/php.yml)
